@@ -39,7 +39,7 @@ struct TemperatureView: View {
                    .pickerStyle(.menu)
                 }
             }
-            .navigationTitle("Temperature")
+            .navigationTitle("Temperature Converter")
            .onChange(of: temperatureInput) {
                 calculateConvertion()
             }

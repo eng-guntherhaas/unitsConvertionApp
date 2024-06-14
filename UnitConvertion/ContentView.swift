@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-    let optionsForConversion = ["Temperature", "Distance", "Volume"]
+    let optionsForConversion = ["Temperature", "Distance","Time", "Volume"]
 
     var body: some View {
         NavigationView {
             VStack {
                 ConverterButton(image: "thermometer", text: optionsForConversion[0], destination: TemperatureView())
                 ConverterButton(image: "ruler", text: optionsForConversion[1], destination: DistanceView())
-                ConverterButton(image: "spigot", text: optionsForConversion[2], destination: VolumeView())
+                ConverterButton(image: "stopwatch", text: optionsForConversion[2], destination: VolumeView())
+                ConverterButton(image: "spigot", text: optionsForConversion[3], destination: VolumeView())
             }
            .navigationTitle("Unit Converter")
         }

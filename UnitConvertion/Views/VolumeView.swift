@@ -40,7 +40,7 @@ struct VolumeView: View {
                 .pickerStyle(.menu)
                 }
             }
-            .navigationTitle("Volume")
+            .navigationTitle("Volume Converter")
         .onChange(of: volumeInput) {
                 calculateConvertion()
             }

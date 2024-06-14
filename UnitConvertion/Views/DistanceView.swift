@@ -39,7 +39,7 @@ struct DistanceView: View {
                    .pickerStyle(.menu)
                 }
             }
-            .navigationTitle("Distance")
+            .navigationTitle("Distance Converter")
            .onChange(of: distanceInput) {
                 calculateConvertion()
             }

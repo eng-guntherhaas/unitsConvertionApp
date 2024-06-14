@@ -15,6 +15,7 @@
 		00C3A9422C1B20580095AE6B /* DistanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C3A9412C1B20580095AE6B /* DistanceView.swift */; };
 		00C3A9442C1B205E0095AE6B /* VolumeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C3A9432C1B205E0095AE6B /* VolumeView.swift */; };
 		00C3A9462C1B22A40095AE6B /* ConverterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C3A9452C1B22A40095AE6B /* ConverterButton.swift */; };
+		00E9F2BF2C1C8F8400046B1B /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E9F2BE2C1C8F8400046B1B /* TimeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		00C3A9412C1B20580095AE6B /* DistanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceView.swift; sourceTree = "<group>"; };
 		00C3A9432C1B205E0095AE6B /* VolumeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeView.swift; sourceTree = "<group>"; };
 		00C3A9452C1B22A40095AE6B /* ConverterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterButton.swift; sourceTree = "<group>"; };
+		00E9F2BE2C1C8F8400046B1B /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				00C3A9412C1B20580095AE6B /* DistanceView.swift */,
 				00C3A9432C1B205E0095AE6B /* VolumeView.swift */,
 				00C3A9452C1B22A40095AE6B /* ConverterButton.swift */,
+				00E9F2BE2C1C8F8400046B1B /* TimeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00C3A9462C1B22A40095AE6B /* ConverterButton.swift in Sources */,
+				00E9F2BF2C1C8F8400046B1B /* TimeView.swift in Sources */,
 				00C3A9332C1B1AAB0095AE6B /* ContentView.swift in Sources */,
 				00C3A9312C1B1AAB0095AE6B /* UnitConvertionApp.swift in Sources */,
 				00C3A9442C1B205E0095AE6B /* VolumeView.swift in Sources */,
