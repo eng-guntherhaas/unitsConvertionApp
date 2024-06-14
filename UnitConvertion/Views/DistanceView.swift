@@ -15,37 +15,40 @@ struct DistanceView: View {
     @State private var distanceOutput = 0.0
 
     var body: some View {
-        Form{
-            Section("Enter a value"){
-                TextField("Distance", value: $distanceInput, formatter: NumberFormatter())
-                   .keyboardType(.decimalPad)
-                Picker("Select Unit", selection: $distanceInput) {
-                    ForEach(distanceUnits, id: \.self) {
-                        Text($0)
+        NavigationView {
+            Form{
+                Section("Enter a value"){
+                    TextField("Distance", value: $distanceInput, format: .number)
+                       .keyboardType(.decimalPad)
+                    Picker("Select Unit", selection: $selectedUnitInput) {
+                        ForEach(distanceUnits, id: \.self) {
+                            Text($0)
+                        }
                     }
+                   .pickerStyle(.menu)
                 }
-               .pickerStyle(.menu)
-            }
-            
-            Section("Result"){
-                TextField("Distance", value: $distanceOutput, formatter: NumberFormatter())
-                   .keyboardType(.decimalPad)
-                Picker("Select Unit", selection: $distanceOutput) {
-                    ForEach(distanceUnits, id: \.self) {
-                        Text($0)
+                
+                Section("Result"){
+                    TextField("Distance", value: $distanceOutput, format: .number)
+                       .keyboardType(.decimalPad)
+                    Picker("Select Unit", selection: $selectedUnitOutput) {
+                        ForEach(distanceUnits, id: \.self) {
+                            Text($0)
+                        }
                     }
+                   .pickerStyle(.menu)
                 }
-               .pickerStyle(.menu)
             }
-        }
-       .onChange(of: distanceInput) {
-            calculateConvertion()
-        }
-       .onChange(of: selectedUnitInput) {
-            calculateConvertion()
-        }
-       .onChange(of: selectedUnitOutput) {
-            calculateConvertion()
+            .navigationTitle("Distance")
+           .onChange(of: distanceInput) {
+                calculateConvertion()
+            }
+           .onChange(of: selectedUnitInput) {
+                calculateConvertion()
+            }
+           .onChange(of: selectedUnitOutput) {
+                calculateConvertion()
+       }
         }
     }
 
@@ -53,68 +56,66 @@ struct DistanceView: View {
         switch selectedUnitInput {
         case "Meters":
             switch selectedUnitOutput {
-            case "Meters":
-                distanceOutput = distanceInput
             case "Kilometers":
-                distanceOutput = distanceInput
+                distanceOutput = distanceInput / 1000
             case "Feet":
-                distanceOutput = distanceInput
+                distanceOutput = distanceInput * 3.28084
             case "Yards":
-                distanceOutput = distanceInput
+                distanceOutput = distanceInput * 1.09361
             case "Miles":
-                distanceOutput = distanceInput
+                distanceOutput = distanceInput / 1609.34
             default:
                 distanceOutput = distanceInput
             }
         case "Kilometers":
             switch selectedUnitOutput {
             case "Meters":
-                distanceOutput = distanceInput
+                distanceOutput = distanceInput * 1000
             case "Feet":
-                distanceOutput = distanceInput
+                distanceOutput = distanceInput * 3280.84
             case "Yards":
-                distanceOutput = distanceInput
+                distanceOutput = distanceInput * 1093.61
             case "Miles":
-                distanceOutput = distanceInput
+                distanceOutput = distanceInput / 1.60934
             default:
                 distanceOutput = distanceInput
             }
         case "Feet":
             switch selectedUnitOutput {
             case "Meters":
-                distanceOutput = distanceInput
+                distanceOutput = distanceInput / 3.28084
             case "Kilometers":
-                distanceOutput = distanceInput
+                distanceOutput = distanceInput / 3280.84
             case "Yards":
-                distanceOutput = distanceInput
+                distanceOutput = distanceInput / 3
             case "Miles":
-                distanceOutput = distanceInput
+                distanceOutput = distanceInput / 5380
             default:
                 distanceOutput = distanceInput
             }
         case "Yards":
             switch selectedUnitOutput {
             case "Meters":
-                distanceOutput = distanceInput
+                distanceOutput = distanceInput / 1.09361
             case "Kilometers":
-                distanceOutput = distanceInput
+                distanceOutput = distanceInput / 1093.61
             case "Feet":
-                distanceOutput = distanceInput
+                distanceOutput = distanceInput * 3
             case "Miles":
-                distanceOutput = distanceInput
+                distanceOutput = distanceInput / 1760
             default:
                 distanceOutput = distanceInput
             }
         case "Miles":
             switch selectedUnitOutput {
             case "Meters":
-                distanceOutput = distanceInput
+                distanceOutput = distanceInput * 1609.34
             case "Kilometers":
-                distanceOutput = distanceInput
+                distanceOutput = distanceInput * 1.60934
             case "Feet":
-                distanceOutput = distanceInput
+                distanceOutput = distanceInput * 5380
             case "Yards":
-                distanceOutput = distanceInput
+                distanceOutput = distanceInput * 1760
             default:
                 distanceOutput = distanceInput
             }

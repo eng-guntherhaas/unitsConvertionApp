@@ -15,37 +15,40 @@ struct TemperatureView: View {
     @State private var temperatureOutput = 0.0
 
     var body: some View {
-        Form{
-            Section("Enter a value"){
-                TextField("Temperature", value: $temperatureInput, formatter: NumberFormatter())
-                   .keyboardType(.decimalPad)
-                Picker("Select Unit", selection: $selectedUnitInput) {
-                    ForEach(temperatureUnits, id: \.self) {
-                        Text($0)
+        NavigationView {
+            Form{
+                Section("Enter a value"){
+                    TextField("Temperature", value: $temperatureInput, format: .number)
+                       .keyboardType(.decimalPad)
+                    Picker("Select Unit", selection: $selectedUnitInput) {
+                        ForEach(temperatureUnits, id: \.self) {
+                            Text($0)
+                        }
                     }
+                   .pickerStyle(.menu)
                 }
-               .pickerStyle(.menu)
-            }
-            
-            Section("Result"){
-                TextField("Temperature", value: $temperatureOutput, formatter: NumberFormatter())
-                   .keyboardType(.decimalPad)
-                Picker("Select Unit", selection: $selectedUnitOutput) {
-                    ForEach(temperatureUnits, id: \.self) {
-                        Text($0)
+                
+                Section("Result"){
+                    TextField("Temperature", value: $temperatureOutput, format: .number)
+                       .keyboardType(.decimalPad)
+                    Picker("Select Unit", selection: $selectedUnitOutput) {
+                        ForEach(temperatureUnits, id: \.self) {
+                            Text($0)
+                        }
                     }
+                   .pickerStyle(.menu)
                 }
-               .pickerStyle(.menu)
             }
-        }
-       .onChange(of: temperatureInput) {
-            calculateConvertion()
-        }
-       .onChange(of: selectedUnitInput) {
-            calculateConvertion()
-        }
-       .onChange(of: selectedUnitOutput) {
-            calculateConvertion()
+            .navigationTitle("Temperature")
+           .onChange(of: temperatureInput) {
+                calculateConvertion()
+            }
+           .onChange(of: selectedUnitInput) {
+                calculateConvertion()
+            }
+           .onChange(of: selectedUnitOutput) {
+                calculateConvertion()
+       }
         }
     }
 
