@@ -26,10 +26,10 @@ struct ConverterButton<Destination: View>: View {
                 Text(text)
             }
             .frame(width: 150, height: 50)
-            .padding()
+            .padding(20)
             .background(Color.blue)
             .foregroundColor(.white)
-            .cornerRadius(10)
+            .cornerRadius(30)
         }
     }
 }

@@ -12,10 +12,10 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            VStack {
+            VStack(spacing: 15){
                 ConverterButton(image: "thermometer", text: optionsForConversion[0], destination: TemperatureView())
                 ConverterButton(image: "ruler", text: optionsForConversion[1], destination: DistanceView())
-                ConverterButton(image: "stopwatch", text: optionsForConversion[2], destination: VolumeView())
+                ConverterButton(image: "stopwatch", text: optionsForConversion[2], destination: TimeView())
                 ConverterButton(image: "spigot", text: optionsForConversion[3], destination: VolumeView())
             }
            .navigationTitle("Unit Converter")
